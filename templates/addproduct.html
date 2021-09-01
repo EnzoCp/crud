@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title> Adicionar Produto</title>
+{% endblock title %}
+
+{% block body %}
+    <div class="d-flex justify-content-center">
+    <h1>Formulario de Produto</h1><br>
+    </div>
+    <div class="d-flex justify-content-center">
+
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <label>Nome:</label>
+    <input type="text" class="form-control" name="nome">
+    <label>Descricao:</label>
+    <input type="text" class="form-control" name="descricao">
+    <label>Quantidade:</label>
+    <input type="number" class="form-control" name="quantidade" min="0">
+    <label>Preco:</label>
+    <input type="number" class="form-control" name="preco">
+<button type="submit" class="btn btn-primary" style="margin-top: 30px">Adicionar Produto!</button>
+</form>
+    </div>
+{% endblock body %}
